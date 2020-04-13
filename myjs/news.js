@@ -23,7 +23,7 @@
          x+=   ' <a target="new" class="linkgo" href=""><div class="h4 mb-3 mt-2 font-weight-bold text-gray-800 titleshow"></div>';
          x+=    '<div class="text-s font-weight-bold text-grey-100  mb-0 linkshow"></div></a>';
          x+=  '</div>';
-         x+=  '<div class="col-auto">';
+         x+=  '<div class="d-none  d-sm-inline-block d-xl col-auto">';
          x+=    '<i class="fas fa-angle-right fa-2x text-gray-500"></i>';
          x+=  '</div>';
          x+= '</div>';
