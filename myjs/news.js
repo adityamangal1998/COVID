@@ -2,9 +2,9 @@
     // actual js now
 
     //document.title.innerHTML=decodeURI(topicIN)+" | NewsWall";
-    var url = 'http://newsapi.org/v2/everything?' +
+    var url = 'https://newsapi.org/v2/everything?' +
         'q=' +
-        'coronavirus%20news' +
+        'coronavirus' +
         '&' +
         // 'from=2020-04-11&' +
         'sortBy=popularity&' +
