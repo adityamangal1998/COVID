@@ -42,54 +42,6 @@ for(var  i=0;i<10;i++)
     
 
 
-    // var imageOn=0;
-    // var artCount = 0;
-    // var colors = new Array("red", "blue", "mustard", "magenta", "green", "brown", "crimson", "navy", "darkGreen", "maroon", "#00423d", "#42000", "#00423d");
-    // var active = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    // for (var i = 0; i < 9; i++) {
-    //     var m = Math.floor(Math.random() * 13);
-    //     document.getElementsByClassName("box")[i].style.backgroundColor = colors[m];
-    // }
-    // function toggle(y) {
-    //     var m = Math.floor(Math.random() * 13);
-    //     document.getElementsByClassName("box")[y].style.backgroundColor = colors[m];
-
-    //     if (active[y] == 0) {
-    //         if(imageOn)
-    //         {
-    //             document.getElementsByClassName("box")[y].style.backgroundImage = 'url("'+z.articles[artCount].urlToImage+'")';
-    //         }
-    //         active[y] = 1;
-    //         //document.getElementsByClassName("box")[y].innerHTML = '<a href="'+ z.articles[artCount].url+'" target="new">'+ z.articles[artCount].title+'</a>';
-    //         document.getElementsByClassName("newslink")[y].href=z.articles[artCount].url;
-    //         document.getElementsByClassName("newslink")[y].innerHTML=z.articles[artCount].title;
-
-    //         if (artCount < z.totalResults - 1) artCount++;
-            
-    //         document.getElementsByClassName("newslink")[y].style.color = "white";
-    //     }
-    //     else {
-    //         if(imageOn)
-    //         {
-    //             document.getElementsByClassName("box")[y].style.backgroundImage = "none";
-    //         }
-    //         //document.getElementsByClassName("box")[y].style.backgroundColor="rgba(86,86,86,0.5)";
-    //         document.getElementsByClassName("newslink")[y].style.color = "rgba(0,0,0,0)";
-    //        // document.getElementsByClassName("newslink")[y].style.color = "rgba(0,0,0,0)";
-    //         active[y] = 0;
-    //     }
-    // }
-    // for (let i = 0; i < 50; i++) {
-    //     task(i);
-    // }
-
-    // function task(i) {
-    //     setTimeout(function () {
-    //         // Add tasks to do 
-    //         var z = Math.floor(Math.random() * 10);
-    //         toggle(z);
-    //     }, 2000 * i);
-    // }
 
 
 })() //async end
