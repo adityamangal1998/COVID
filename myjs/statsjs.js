@@ -12,7 +12,7 @@
 
   document.getElementById("thead").innerHTML='Search results for "'+searchin+'"';
 
-
+  
 
   var response = await fetch('https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?search=' + searchin);
 
@@ -33,6 +33,7 @@
   }
   p += "</tbody";
   document.getElementById("dataTable").innerHTML = p;
+  document.getElementById("hide").style.display="none";
 
 
 

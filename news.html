@@ -1,3 +1,5 @@
+<!-- API key 3203b6d861d34d5382ea9e594e18baaa -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Statistics</title>
+  <title>Latest News</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +21,10 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+  <script type="text/javascript">
+    function noenter() {
+      return !(window.event && window.event.keyCode == 13); }
+    </script>
 </head>
 
 <body id="page-top">
@@ -28,12 +33,12 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-fw fa-question-circle"></i>
+          <i class="fas fa-fw fa-search"></i>
         </div>
         <div class="sidebar-brand-text mx-3">LiveLife</div>
       </a>
@@ -48,13 +53,13 @@
           <span>Home</span></a>
       </li>
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="statisticsMY.html">
           <i class="fas fa-fw fa-question-circle"></i>
           <span>Statistics</span></a>
       </li>
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item ">
+       <!-- Nav Item - Dashboard -->
+       <li class="nav-item active">
         <a class="nav-link" href="news.html">
           <i class="fas fa-fw fa-search"></i>
           <span>News articles</span></a>
@@ -126,11 +131,11 @@
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
-              <input type="text"   id="sbox"onkeypress="return noenter()"  class="form-control bg-light border-0 small" placeholder="Search for Statistics"
+              <input type="text"  id="sbox1"onkeypress="return noenter()"  class="form-control bg-light border-0 small" placeholder="Search for Statistics"
                 aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <a id="go" href="">
-                  <button onclick="searc()" class="btn btn-danger" type="button">
+                <a id="go1" href="">
+                  <button class="btn btn-danger" type="button" onclick="searc1()">
                   <i class="fas fa-search fa-sm"></i>
                 </button></a>
               </div>
@@ -159,34 +164,17 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h2 mb-0 text-gray-800">Statistics</h2>
+            <h1 class="h2 mb-0 text-gray-800">Latest news articles</h2>
               <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
           </div>
 
-         <!-- stats tics section starts -->
-
-         
-         
-<!-- DataTable -->
-<div class="card shadow mb-4">
-  <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary" id="thead"></h6>
-  </div>
-  <div class="card-body">
-    <div class="table-responsive">
-      <div id="hide">Fetching data, please wait...</div>
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-         
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-<!-- table end -->
+          <!-- news section starts -->
+          <div class="newscontainer">Fetching latest articles...</div>
+          
 
 
-         <!-- stats section end -->
+          <!-- news section end -->
 
         </div>
         <!-- /.container-fluid -->
@@ -198,7 +186,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; CrazyRockers</span>
           </div>
         </div>
       </footer>
@@ -234,11 +222,18 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="myjs/statsjs.js"></script>
+  <!-- <script src="myjs/statsjs.js"></script> -->
+  <script src="myjs/news.js"></script>
+  
+  
   <script>
     function searc()
     {
       document.getElementById("go").href="statisticsshow.html"+"?search="+document.getElementById("sbox").value;
+    }
+    function searc1()
+    {
+      document.getElementById("go1").href="statisticsshow.html"+"?search="+document.getElementById("sbox1").value;
     }
 
   </script>
