@@ -1,42 +1,28 @@
 'use strict';
-            //var c=prompt();
             (async () => {
-            var response = await fetch('https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?search=india');
-            
+            var response = await fetch('https://api.apify.com/v2/key-value-stores/toDWvRj1JpTXiM8FF/records/LATEST?disableRedirect=true');
             var text = await response.text(); // read response body as text
-            
-            
-            var x="",j=0;
-
-            for(var i=0; i<text.length;i++)
-            {
-                if(text[i]!='['&&text[i]!=']') { x+=text[i]; }
-            }
-           // document.writeln(x);
-            var y=JSON.parse(x);
-                //end of india data....................
-
-             response = await fetch('https://corona-virus-stats.herokuapp.com/api/v1/cases/general-stats');
-            
+            var y = JSON.parse(text);
+             response = await fetch('https://api.apify.com/v2/key-value-stores/SmuuI0oebnTWjRTUh/records/LATEST?disableRedirect=true');
              text = await response.text(); // read response body as text
-            
-            
-             x="",j=0;
-
-            for(var i=0; i<text.length;i++)
-            {
-                if(text[i]!='['&&text[i]!=']') { x+=text[i]; }
-            }
-           // document.writeln(x);
-            var yy=JSON.parse(x);
-            //end of world
-
-          //  document.innerHTML=x;
-          document.getElementsByClassName("ininf")[0].innerHTML=(y.data.rows.active_cases);
-            document.getElementsByClassName("inrec")[0].innerHTML=(y.data.rows.total_recovered);
-            document.getElementsByClassName("indeath")[0].innerHTML=(y.data.rows.total_deaths);
-            document.getElementsByClassName("wwinf")[0].innerHTML=(yy.data.currently_infected);
-            document.getElementsByClassName("wwrec")[0].innerHTML=(yy.data.recovery_cases);
-            document.getElementsByClassName("wwdeath")[0].innerHTML=(yy.data.death_cases);
+            var yy=JSON.parse(text);
+            document.getElementsByClassName("ininf")[0].innerHTML=value_to_indian_format(y.totalCases);
+            document.getElementsByClassName("inrec")[0].innerHTML=value_to_indian_format(y.recovered);
+            document.getElementsByClassName("indeath")[0].innerHTML=value_to_indian_format(y.deaths);
+            document.getElementsByClassName("wwinf")[0].innerHTML=value_to_indian_format(yy.regionData[0].totalCases);
+            document.getElementsByClassName("wwrec")[0].innerHTML=value_to_indian_format(yy.regionData[0].totalRecovered);
+            document.getElementsByClassName("wwdeath")[0].innerHTML=value_to_indian_format(yy.regionData[0].totalDeaths);
 
             })()
+
+
+    function value_to_indian_format(x)
+        {
+            x=x.toString();
+            var lastThree = x.substring(x.length-3);
+            var otherNumbers = x.substring(0,x.length-3);
+            if(otherNumbers != '')
+                lastThree = ',' + lastThree;
+            var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+            return res;
+        }        
