@@ -2,13 +2,7 @@
     // actual js now
 
     //document.title.innerHTML=decodeURI(topicIN)+" | NewsWall";
-    var url = 'https://newsapi.org/v2/everything?' +
-        'q=' +
-        'coronavirus' +
-        '&' +
-        // 'from=2020-04-11&' +
-        'sortBy=popularity&' +
-        'apiKey=201a0daed6744c5db8b4ea37872af4c4';
+    var url = 'http://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=201a0daed6744c5db8b4ea37872af4c4';
     var response = await fetch(url);
     var text = await response.text(); // read response body as text
     var z = JSON.parse(text);
